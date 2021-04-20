@@ -1,0 +1,56 @@
+import React, {useState, useEffect} from 'react';
+import './Login.css';
+import Input from './Input';
+import Button from './ButtonWithSpinner';
+import ErrMsg from './ErrMsg';
+import SuccessMsg from './SuccessMsg';
+
+import { signInStart } from '../redux/actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { selectIsLoading, selectErrMsg, selectSuccessMsg } from '../redux/selectors/userSelector';
+
+function Log(props) {
+	const dispatch = useDispatch();
+	const isLoading = useSelector(state => selectIsLoading(state));
+	let errMsg = useSelector(state => selectErrMsg(state));
+	const successMsg = useSelector(state => selectSuccessMsg(state));
+
+	const [input, setInput] = useState({ username: '', password: '' });
+	const { username, password } = input;
+
+	useEffect(() => {
+		document.title = 'Login';
+	})
+
+	const handleClick = e => {
+		dispatch(signInStart(input));
+	}
+
+	const handleChange = e => {
+		const { name, value } = e.target;
+		errMsg = '';
+
+		setInput(prev => {
+			return {
+				...prev,
+				[name]: value
+			}
+		})
+	}
+
+	return (
+		<div className="login-page">
+			<h1>Login</h1>
+			{ successMsg ? <SuccessMsg text={successMsg} /> : '' }
+			<Input type='text' name='username' placeholder='Username' value={username} onChange={handleChange} />
+			<Input type='password' name='password' placeholder='Password' value={password} onChange={handleChange} />
+			{
+				errMsg ? <ErrMsg text={errMsg} /> : ''
+			}
+			<Button handleClick={handleClick} isLoading={isLoading} />
+		</div>
+	);
+}
+
+export default Log;

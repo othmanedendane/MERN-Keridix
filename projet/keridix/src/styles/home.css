@@ -1,0 +1,12 @@
+#card1 div img {
+	-webkit-filter: sepia(100%);
+	filter: sepia(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#card1 div:hover img {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+    -webkit-filter: sepia(0);
+	filter: sepia(0);
+}

@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Projet final mern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Othmane Dendane",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/passport": "^7.1.5",
+    "@reduxjs/toolkit": "^1.5.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-session": "^1.17.1",
+    "formidable": "^1.2.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose-unique-validator": "^2.0.3",
+    "nodemon": "^2.0.7",
+    "passport": "^0.4.1",
+    "passport-local-mongoose": "^6.1.0"
+  }
+}
