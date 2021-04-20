@@ -1,5 +1,5 @@
 # MERN-Keridix
-Site de react full stack avec mogoDB
+Site de react full stack avec mongoDB
 
 Description du projet : https://www.youtube.com/watch?v=eJNlutUKiOI
 
